@@ -1,1 +1,1 @@
-web: pip install . -U && cmpweb-run
+web: sh setup.sh && streamlit run web.py
