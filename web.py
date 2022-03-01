@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-api_url = 'http://127.0.0.1:8000/'
+api_url = 'https://cmpapi-7wc6zc723a-ew.a.run.app/'
 
 response = requests.get(api_url)
 
