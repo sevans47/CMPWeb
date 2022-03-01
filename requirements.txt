@@ -4,6 +4,14 @@ setuptools>=26
 twine
 wheel>=0.29
 
+# tests/linter
+black
+coverage
+flake8
+pytest
+yapf
+wheel
+
 #Web stuff
 streamlit
 uvicorn
