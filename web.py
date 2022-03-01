@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-api_url = 'https://taxifare.lewagon.ai/predict'
+api_url = 'http://127.0.0.1:8000/'
 
 response = requests.get(api_url)
 
