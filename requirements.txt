@@ -7,3 +7,6 @@ wheel>=0.29
 #Web stuff
 streamlit
 uvicorn
+
+#API stuff
+requests
