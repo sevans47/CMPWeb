@@ -42,6 +42,26 @@ count_lines:
 	@echo ''
 
 # ----------------------------------
+#         HEROKU COMMANDS
+# ----------------------------------
+
+streamlit:
+	-@streamlit run app.py
+
+heroku_login:
+	-@heroku login
+
+heroku_upload_public_key:
+	-@heroku keys:add ~/.ssh/id_ed25519.pub
+
+heroku_create_app:
+	-@heroku create --ssh-git ${APP_NAME}
+
+deploy_heroku:
+	-@git push heroku master
+	-@heroku ps:scale web=1
+
+# ----------------------------------
 #      UPLOAD PACKAGE TO PYPI
 # ----------------------------------
 PYPI_USERNAME=<AUTHOR>
