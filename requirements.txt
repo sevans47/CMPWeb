@@ -14,7 +14,9 @@ wheel
 
 #Web stuff
 streamlit
-uvicorn
 
 #API stuff
 requests
+
+#music stuff
+music21
