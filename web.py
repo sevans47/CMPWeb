@@ -16,6 +16,7 @@ from music21 import converter, environment
 # us['musescoreDirectPNGPath'] = '/build_498a5956/usr/bin/mscore3'
 # us['musicxmlPath'] = '/build_498a5956/usr/bin/mscore3'
 
+environment.set('midiPath', '/usr/bin/mscore3')
 s = converter.parse('tinyNotation: 4/8 C4_hi D-4 E#4 F8 trip{G4 A4 B4} c4')
 s.show('midi')
 
