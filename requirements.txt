@@ -10,7 +10,6 @@ coverage
 flake8
 pytest
 yapf
-wheel
 
 #Web stuff
 streamlit
