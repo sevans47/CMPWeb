@@ -13,8 +13,8 @@ from music21 import converter, environment
 
 #hopoefuly it'll work
 us = environment.UserSettings()
-us['musescoreDirectPNGPath'] = '/usr/bin/mscore3'
-us['musicxmlPath'] = '/usr/bin/mscore3'
+us['musescoreDirectPNGPath'] = '/app/usr/bin/mscore3'
+us['musicxmlPath'] = '/app/usr/bin/mscore3'
 
 s = converter.parse('tinyNotation: 4/8 C4_hi D-4 E#4 F8 trip{G4 A4 B4} c4')
 s.show()
