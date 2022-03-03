@@ -23,7 +23,7 @@ from music21 import converter, environment
 
 # print('success')
 
-audio_file = open('../song/mz_311_1.wav', 'rb')
+audio_file = open('song/mz_311_1.wav', 'rb')
 audio_bytes = audio_file.read()
 
 st.audio(audio_bytes, format='audio/ogg')
