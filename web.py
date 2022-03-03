@@ -22,3 +22,6 @@ s.show('midi')
 
 st.write('hello')
 st.write('hi')
+
+
+print('success')
