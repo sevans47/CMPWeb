@@ -1,6 +1,6 @@
 import streamlit as st
 import requests
-from music21 import converter
+from music21 import converter, environment
 
 # api_url = 'https://cmpapi-7wc6zc723a-ew.a.run.app'
 
@@ -12,7 +12,7 @@ from music21 import converter
 # st.write(pred)
 
 #hopoefuly it'll work
-us = music21.environment.UserSettings()
+us = environment.UserSettings()
 us['musescoreDirectPNGPath'] = '/usr/bin/mscore3'
 us['musicxmlPath'] = '/usr/bin/mscore3'
 
