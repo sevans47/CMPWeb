@@ -14,8 +14,7 @@ from music21 import converter
 #hopoefuly it'll work
 
 s = converter.parse('tinyNotation: 4/8 C4_hi D-4 E#4 F8 trip{G4 A4 B4} c4')
-# s.show()
-# s.show('midi')
+s.show()
+s.show('midi')
 
-st.write('hello')
 st.write('hello')
