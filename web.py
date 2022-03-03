@@ -17,11 +17,7 @@ us['musescoreDirectPNGPath'] = '/app/usr/bin/mscore3'
 us['musicxmlPath'] = '/app/usr/bin/mscore3'
 
 s = converter.parse('tinyNotation: 4/8 C4_hi D-4 E#4 F8 trip{G4 A4 B4} c4')
-s.show()
 s.show('midi')
-
-st.write('hello')
-st.write('hi')
 
 
 print('success')
