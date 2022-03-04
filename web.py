@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 #from music21 import converter, environment
-from midi2audio import FluidSynth
+#from midi2audio import FluidSynth
 
 
 # api_url = 'https://cmpapi-7wc6zc723a-ew.a.run.app'
@@ -26,10 +26,10 @@ from midi2audio import FluidSynth
 #Lets go
 
 
-# サウンドフォントを指定する
-fs = FluidSynth(sound_font='font.sf2')
-# 入力するmidiファイルとアウトプットファイル
-fs.midi_to_audio('input.mid', 'output.mp3') # またはoutput.wav
+# # サウンドフォントを指定する
+# fs = FluidSynth(sound_font='font.sf2')
+# # 入力するmidiファイルとアウトプットファイル
+# fs.midi_to_audio('input.mid', 'output.mp3') # またはoutput.wav
 
 
 audio_file = open('song/mz_311_1.wav', 'rb')
