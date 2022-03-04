@@ -6,3 +6,5 @@ COPY web.py /web.py
 
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
+
+CMD streamlit run web.py
