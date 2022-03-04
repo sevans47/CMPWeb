@@ -19,4 +19,3 @@ requests
 
 #music stuff
 music21
-#midi2audio
