@@ -18,4 +18,7 @@ streamlit
 requests
 
 #music stuff
+pretty_midi
+pyFluidSynth
+scipy
 music21
