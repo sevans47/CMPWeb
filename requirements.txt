@@ -22,3 +22,5 @@ pretty_midi
 pyFluidSynth
 scipy
 music21
+midi2audio
+fluidsynth

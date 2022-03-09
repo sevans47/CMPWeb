@@ -9,6 +9,9 @@ RUN pip install --upgrade pip
 COPY requirements.txt /requirements.txt
 RUN pip install -r requirements.txt
 
-COPY web.py /web.py
+COPY blank.png /blank.png
+COPY melodywriter.py /melodywriter.py
+RUN mkdir /usr/share/soundfonts
+COPY UprightPiano.sf2 /usr/share/soundfonts/default.sf2
 
-CMD streamlit run web.py --server.port $PORT
+CMD streamlit run melodywriter.py --server.port $PORT

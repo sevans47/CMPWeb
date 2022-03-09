@@ -1,4 +1,5 @@
 import io
+from msilib import sequence
 
 import streamlit as st
 import pretty_midi
@@ -6,6 +7,19 @@ from scipy.io import wavfile
 import numpy as np
 import music21
 
+import requests
+
+
+#----------generate the first sequence----------
+sequence = [[73, 16],[74, 16],[75, 8],[0, 8],[78, 4]]
+
+#----------getting stuff from api----------
+
+api_url='https://tmp-api-7wc6zc723a-ew.a.run.app/predict'
+input_seq = str(sequence)
+response = requests.get(api_url, params={'sequence':input_seq})
+res = response.json()
+note = res['notes']
 
 
 #----------sheet music----------
@@ -49,10 +63,7 @@ def notes_to_midi(model_output, bpm=120):
 midi = notes_to_midi([73, 16])
 
 #-----------convert midi to wav----------#
-#midi_file = open('song/mz_311_1.mid', "rb")
 
-#midi_data = pretty_midi.PrettyMIDI(midi_file)
-#audio_data = midi_data.fluidsynth()
 audio_data = midi.fluidsynth()
 audio_data = np.int16(
     audio_data / np.max(np.abs(audio_data)) * 32767 * 0.9

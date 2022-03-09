@@ -76,4 +76,13 @@ pypi:
 
 #----------streamlit-----------
 run_streamlit:
-	@streamlit run web.py
+	@streamlit run melodywriter.py
+
+#----------docker stuf----------
+PROJECT_ID=le-wagon-796
+DOCKER_IMAGE_NAME=cmpweb-sbm
+
+build_push_deploy_container:
+	@docker build -t eu.gcr.io/${PROJECT_ID}/${DOCKER_IMAGE_NAME} .
+	@docker push eu.gcr.io/${PROJECT_ID}/${DOCKER_IMAGE_NAME}
+	@gcloud run deploy --image eu.gcr.io/${PROJECT_ID}/${DOCKER_IMAGE_NAME} --platform managed --region europe-west1
