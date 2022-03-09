@@ -76,7 +76,7 @@ pypi:
 
 #----------streamlit-----------
 run_streamlit:
-	@streamlit run web.py
+	@streamlit run melodywriter.py
 
 #----------docker stuf----------
 PROJECT_ID=le-wagon-796
