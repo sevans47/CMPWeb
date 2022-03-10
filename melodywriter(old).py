@@ -1,7 +1,7 @@
 import streamlit as st
 import numpy as np
 import requests
-from music21 import note, stream, meter, tie
+from music21 import note, stream
 import music21
 from midi2audio import FluidSynth
 
@@ -70,29 +70,8 @@ if get_input:
     st.session_state['input_stream'] = input_stream
     st.session_state['input'] = input_resp
 
-    #add ties
-    sequence = input_resp
-    s = stream.Stream()
-    ts = meter.TimeSignature('4/4')
-    s.timeSignature = ts
-    total_dur = 0
-    last_dur = []
-    for pair in sequence:
-        n = note.Note(pair[0], quarterLength=pair[1]) if pair[0] !=0 else note.Rest(quarterLength=pair[1])
-        total_dur += pair[1]
-        last_dur.append(total_dur % 4)
-        if len(last_dur) > 1:
-            if last_dur[-2] > last_dur[-1] and last_dur[-1] != 0:
-                n1 = note.Note(pair[0], quarterLength = s.timeSignature.numerator - last_dur[-2]) if pair[0] !=0 else note.Rest(quarterLength=s.timeSignature.numerator - last_dur[-2])
-                n1.tie = tie.Tie('start')
-                n2 = note.Note(pair[0],quarterLength=last_dur[-1]) if pair[0] !=0 else note.Rest(quarterLength=last_dur[-1])
-                n2.tie = tie.Tie('stop')
-                s.append(n1)
-                s.append(n2)
-                continue
-        s.append(n)
-    #show stream
-    s.show(fmt='lily.png', fp='input')
+    #show stream show midi
+    input_stream.show(fmt='lily.png', fp='input')
     im.image('input.png')
     #export to midi / wav
     st.session_state.input_stream.write(fmt='midi',fp='amidifile.mid')
@@ -134,33 +113,9 @@ if st.session_state.writing_mode:
         #st.write('option3')
         st.session_state.input.append(st.session_state.optionlist[2])
         st.session_state.input_stream.append(st.session_state.optionnotes[2]) #4+1
-    
-    #add make ties version of mainstream
-    sequence = st.session_state.input
-    s = stream.Stream()
-    ts = meter.TimeSignature('4/4')
-    s.timeSignature = ts
-    total_dur = 0
-    last_dur = []
-    for pair in sequence:
-        n = note.Note(pair[0], quarterLength=pair[1]) if pair[0] !=0 else note.Rest(quarterLength=pair[1])
-        total_dur += pair[1]
-        last_dur.append(total_dur % 4)
-        if len(last_dur) > 1:
-            if last_dur[-2] > last_dur[-1] and last_dur[-1] != 0:
-                n1 = note.Note(pair[0], quarterLength = s.timeSignature.numerator - last_dur[-2]) if pair[0] !=0 else note.Rest(quarterLength=s.timeSignature.numerator - last_dur[-2])
-                n1.tie = tie.Tie('start')
-                n2 = note.Note(pair[0],quarterLength=last_dur[-1]) if pair[0] !=0 else note.Rest(quarterLength=last_dur[-1])
-                n2.tie = tie.Tie('stop')
-                s.append(n1)
-                s.append(n2)
-                continue
-        s.append(n)
-    
-    #write image of tie version
-    s.show(fmt='lily.png', fp='input')
+
     #display new main stream
-    #st.session_state.input_stream.show(fmt='lily.png', fp='input') #4+1
+    st.session_state.input_stream.show(fmt='lily.png', fp='input') #4+1
     im.image('input.png')
     #display audio
 
