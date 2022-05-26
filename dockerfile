@@ -14,4 +14,15 @@ COPY melodywriter.py /melodywriter.py
 RUN mkdir /usr/share/soundfonts
 COPY UprightPiano.sf2 /usr/share/soundfonts/default.sf2
 
-CMD streamlit run melodywriter.py --server.port $PORT
+COPY benfacec.jpg /benfacec.jpg
+COPY bensheetcol.png /bensheetcol.png
+COPY benaudio.wav /benaudio.wav
+COPY mizfacec.jpg /mizfacec.jpg
+COPY mizsheetcol.png /mizsheetcol.png
+COPY mizaudio.wav /mizaudio.wav
+COPY stefacec.jpg /stefacec.jpg
+COPY stesheetcol.png /stesheetcol.png
+COPY steaudio.wav /steaudio.wav
+COPY MiniMozartStreamlitExamples.py /MiniMozartStreamlitExamples.py
+
+CMD streamlit run MiniMozartStreamlitExamples.pyex --server.port $PORT
