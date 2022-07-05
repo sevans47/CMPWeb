@@ -23,6 +23,6 @@ COPY mizaudio.wav /mizaudio.wav
 COPY stefacec.jpg /stefacec.jpg
 COPY stesheetcol.png /stesheetcol.png
 COPY steaudio.wav /steaudio.wav
-COPY MiniMozart-Streamlit.py /MiniMozart-Streamlit.py
+COPY MiniMozartStreamlitStephen.py /MiniMozartStreamlitStephen.py
 
-CMD streamlit run MiniMozartStreamlitExamples.pyex --server.port $PORT
+CMD streamlit run MiniMozartStreamlitStephen.py --server.port $PORT
