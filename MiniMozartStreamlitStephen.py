@@ -39,6 +39,7 @@ introtext2 = st.empty()
 introtext3 = st.empty()
 introtext4 = st.empty()
 
+
 excol1, excol2 = st.columns([1.5,2])
 with excol2:
     benwr = st.empty()
@@ -88,6 +89,21 @@ with col4:
 
 st.write("**Instructions:** Press the left button to randomly choose a mozart bar to start you off. Press play to listen. Once you're happy, press the right button to start writing a melody with MiniMozart's help! Choose a note from the 3 suggestions on the sidebar and keep going until you're happy.")
 
+st.write("---")
+
+introtext5 = st.empty()
+introtext6 = st.empty()
+
+col1, col2, col3 = st.columns(3)
+with col1:
+    benarrtxt = st.empty()
+    benarraud = st.empty()
+with col2:
+    stearrtxt = st.empty()
+    stearraud = st.empty()
+with col3:
+    mizarrtxt = st.empty()
+    mizarraud = st.empty()
 
 
 ### get input mode
@@ -153,7 +169,7 @@ if st.session_state.first_session:
 
 #Our model predicts and suggests the 3 notes Mozart might write next in a melody to help you write. To start you off, MiniMozart randomly chooses the first 8 notes of a Mozart melody. Here are some examples pieces written by the team using MiniMozart. The blue is the given Mozart piece, the green is what was generated with our deep learning model')
 
-    htmltxt = '<p <span style="font-family:sans-serif; font-size: 14px;">Here&#39s some melodies the team wrote using suggestions from our deep learning model! </span> <p style="font-family:sans-serif; color:#1a4697; font-size: 14px;"><b>In blue is the real 8 Mozart notes we started with.</b> <span style="font-family:sans-serif; color:#4a8522; font-size: 14px;"><b>In green is what we wrote using deep learning.</b></span></p><p <span style="font-family:sans-serif; color:Black; font-size: 14px;">Scroll down and try it yourself at the bottom! </p>'
+    htmltxt = '<p <span style="font-family:sans-serif; font-size: 14px;">Here&#39s some melodies the team wrote using suggestions from our deep learning model! </span> <p style="font-family:sans-serif; color:#1a4697; font-size: 14px;"><b>In blue is the real 8 Mozart notes we started with.</b> <span style="font-family:sans-serif; color:#4a8522; font-size: 14px;"><b>In green is what we wrote using deep learning.</b></span></p><p <span style="font-family:sans-serif; color:Black; font-size: 14px;">Scroll down and try it yourself below! </p>'
     introtext4.markdown(htmltxt, unsafe_allow_html=True)
 
     benwr.write('**Composed by [Ben Thompson](https://github.com/bendthompson)**')
@@ -171,6 +187,19 @@ if st.session_state.first_session:
     mizim.image('mizsheetcol.png')
     mizaud.audio('mizaudio.wav')
 
+    introtext5.subheader("Stephen's arrangements")
+    introtext6.write(
+        """
+        As an example of how MiniMozart can be used, Stephen took the three example melodies above
+        and arranged them for guitar:
+        """)
+
+    benarrtxt.write("Ben's melody")
+    benarraud.audio("arrange_ben.wav")
+    stearrtxt.write("Stephen's melody")
+    stearraud.audio("arrange_stephen.wav")
+    mizarrtxt.write("Mizuki's melody")
+    mizarraud.audio("arrange_mizuki.wav")
 
 
 
