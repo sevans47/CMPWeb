@@ -23,6 +23,9 @@ COPY mizaudio.wav /mizaudio.wav
 COPY stefacec.jpg /stefacec.jpg
 COPY stesheetcol.png /stesheetcol.png
 COPY steaudio.wav /steaudio.wav
+COPY arrange_ben.wav /arrange_ben.wav
+COPY arrange_mizuki.wav /arrange_mizuki.wav
+COPY arrange_stephen.wav /arrange_stephen.wav
 COPY MiniMozartStreamlitStephen.py /MiniMozartStreamlitStephen.py
 
 CMD streamlit run MiniMozartStreamlitStephen.py --server.port $PORT
