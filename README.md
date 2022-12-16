@@ -1,6 +1,6 @@
 # MiniMozartWebsite
 - MiniMozart streamlit app for generating melodies using Mozart and deep learning.
-- Visit the MiniMozart website [here](https://cmp-web-3mknid2ioq-ew.a.run.app/)
+- Visit the MiniMozart website [here](https://mm-web-test-3mknid2ioq-ew.a.run.app/)
 - See the [main github repo](https://github.com/sevans47/MiniMozart) for more info on the MiniMozart model and API
 
 ## Tools Used
